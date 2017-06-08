@@ -4,6 +4,8 @@ jobs:
     working_directory: ~/workspace
     docker:
       - image: node:6.10.0
+        environment:
+            CHROME-BIN: chromium-browser
     steps:
       - checkout
       - run:
