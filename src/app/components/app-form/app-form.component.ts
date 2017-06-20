@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppFormComponent implements OnInit {
 
-  constructor() {
-  }
+  date: Date = new Date();
+  amount = 0;
+  payment = 0;
+  repayment: number = this.amount;
+
+  constructor() {}
 
   ngOnInit() {
   }
 
-  onSubmit(data: Object): void {
-    console.log(data);
+  onSubmit(): void {
+    console.log('amount ' + this.amount);
+    console.log('payment ' + this.payment);
+    console.log('repayment ' + this.repayment);
   }
 }
