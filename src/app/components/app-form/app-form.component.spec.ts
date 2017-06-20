@@ -15,7 +15,7 @@ describe('AppFormComponent', () => {
     TestBed.configureTestingModule({
       providers: [
         AccountService,
-      ]
+      ],
       declarations: [
         AppFormComponent,
         AccountComponent,
