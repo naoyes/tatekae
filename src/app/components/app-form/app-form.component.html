@@ -6,18 +6,47 @@
 
   </div>
   <div>
-    <label for="amount">自分の飲み代</label>
-    <input type="number" name="amount" [(ngModel)]="amount">
-  </div>
-  <div>
-    <label for="payment">立て替え金額</label>
-    <input type="number" name="payment" [(ngModel)]="payment">
+    <label for="payment">立替</label>
+    <input type="number" name="advancePayment" [(ngModel)]="advancePayment">
   </div>
   <account></account>
   <div>
-    <label for="repayment">立て替え返済金額</label>
+    <label for="amount">自分の支出</label>
+    <input type="number" name="amount" [(ngModel)]="payment">
+  </div>
+  <div>
+    <label for="repayment">他人からの受取</label>
     <input type="number" name="repayment" [(ngModel)]="repayment">
   </div>
+
+  <table>
+    <thead>
+      <td>日付</td>
+      <td>種別</td>
+      <td>口座</td>
+      <td>金額</td>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ date| date:'yyyy-MM-dd' }}</td>
+        <td>支払い</td>
+        <td>JCB</td>
+        <td>{{ advancePayment }}</td>
+      </tr>
+      <tr>
+        <td>{{ date| date:'yyyy-MM-dd' }}</td>
+        <td>支払い</td>
+        <td>財布</td>
+        <td>{{ payment }}</td>
+      </tr>
+      <tr>
+        <td>{{ date| date:'yyyy-MM-dd' }}</td>
+        <td>収入</td>
+        <td>財布</td>
+        <td>{{ repayment }}</td>
+      </tr>
+    </tbody>
+  </table>
   <button type="submit">送信</button>
   <button type="reset">クリア</button>
 </form>

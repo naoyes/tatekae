@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppFormComponent implements OnInit {
 
   date: Date = new Date();
-  amount = 0;
-  payment = 0;
-  repayment: number = this.amount;
+  advancePayment = 0;
+  payment = this.advancePayment - this.repayment;
+  repayment = 0;
 
   constructor() {}
 
@@ -18,8 +18,8 @@ export class AppFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('amount ' + this.amount);
     console.log('payment ' + this.payment);
+    console.log('advancePayment ' + this.advancePayment);
     console.log('repayment ' + this.repayment);
   }
 }
