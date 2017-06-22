@@ -18,8 +18,11 @@ export class AppFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('payment ' + this.payment);
+  }
+
+  calc() {
     console.log('advancePayment ' + this.advancePayment);
+    console.log('payment ' + this.payment);
     console.log('repayment ' + this.repayment);
   }
 }

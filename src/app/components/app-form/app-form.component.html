@@ -2,21 +2,21 @@
 <form #appForm="ngForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="date">日付</label>
-    <input [ngModel]="date| date:'yyyy-MM-dd'" (ngModelChange)="date= $event" type="date" name="date"/>
+    <input type="date" name="date" [ngModel]="date| date:'yyyy-MM-dd'" (ngModelChange)="date=$event"/>
 
   </div>
   <div>
-    <label for="payment">立替</label>
-    <input type="number" name="advancePayment" [(ngModel)]="advancePayment">
-  </div>
-  <account></account>
-  <div>
-    <label for="amount">自分の支出</label>
-    <input type="number" name="amount" [(ngModel)]="payment">
+    <label for="advancePayment">立替</label>
+    <input type="number" name="advancePayment" [(ngModel)]="advancePayment" (ngModelChange)="calc()" />
+    <account></account>
   </div>
   <div>
     <label for="repayment">他人からの受取</label>
-    <input type="number" name="repayment" [(ngModel)]="repayment">
+    <input type="number" name="repayment" [(ngModel)]="repayment" (ngModelChange)="calc()" />
+  </div>
+  <div>
+    <label for="payment">自分の支出</label>
+    <input type="number" name="payment" [(ngModel)]="payment" (ngModelChange)="calc()" />
   </div>
 
   <table>
