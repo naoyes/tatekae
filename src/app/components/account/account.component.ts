@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Account } from '../../entities/account';
-import { AccountRepository } from '../../repositories/account.repository';
 import { AccountService } from '../../services/account.service';
 
 @Component({
@@ -10,6 +9,8 @@ import { AccountService } from '../../services/account.service';
   styleUrls: ['./account.component.css']
 })
 export class AccountComponent implements OnInit {
+  @Input() label: any;
+  @Input() id: number;
   accounts: Array<Account>;
 
   constructor(private accountService: AccountService) {}
